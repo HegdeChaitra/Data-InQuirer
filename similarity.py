@@ -1,15 +1,14 @@
 import pickle
 import numpy as np
+loaded_embeddings=pickle.load(open('loaded_embedding','rb'))
 
-#load the cached files using pickle
-loaded_embeddings=pickle.load(open('Cached_Data/loaded_embedding','rb'))
-words=pickle.load(open('Cached_Data/words','rb'))
-idx2words=pickle.load(open('Cached_Data/idx2words','rb'))
+words=pickle.load(open('words','rb'))
 
+idx2words=pickle.load(open('idx2words','rb'))
 
-#suction to compute cosine similarity between 50 dimentional representation of keyword and entire word embedding
 def cos_sim(b,A,epsilon = 1e-5):
-    """compute consine similarity between A and b
+    """Takes 2 vectors a, b and returns the cosine similarity according 
+    to the definition of the dot product
     """
     dot_product = np.dot(A, b)
     norm_a = np.linalg.norm(A,axis=1) + epsilon
@@ -17,7 +16,7 @@ def cos_sim(b,A,epsilon = 1e-5):
     return dot_product / (norm_a * norm_b)
 
 
-def find_nearest(ref_vec, words, embedding,topk=3):
+def find_nearest(ref_vec, words, embedding,topk=5):
     """
     Finds the top-k most similar words to "word" in terms of cosine similarity in the given embedding
     :param ref_vec: reference word vector
@@ -32,7 +31,4 @@ def find_nearest(ref_vec, words, embedding,topk=3):
     # sort the words by similarity and return the topk
     sorted_words = np.argsort(-scored_words)
     
-    #return thr list of similar words
     return [(idx2words[w]) for w in sorted_words[:topk]]
-
-#print(find_nearest(loaded_embeddings[words['hate']], words, loaded_embeddings, topk=4))
