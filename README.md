@@ -4,4 +4,6 @@
 - Developed 11 advanced search functionalities, currently are not supported by NYC Open Data website, to help the user find datasets
 - Used PySpark to parallelize, hence speed up the execution of code. Created data summaries to quickly speed up the search process
 
-Screenshots of search results can be found in report or presenatation slide.
+## Friendly and Interactive User Interface
+![Alt text](Screen Shot 2018-05-13 at 3.24.09 PM.png?raw=true "Title")
+
