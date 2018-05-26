@@ -7,3 +7,16 @@
 ## Friendly and Interactive User Interface
 ![Alt text](ss1.png?raw=true "Title")
 
+##
+
+![Alt text](s1.png?raw=true "Title")
+
+##
+
+![Alt text](s2.png?raw=true "Title")
+
+##
+
+![Alt text](s3.png?raw=true "Title")
+
+
